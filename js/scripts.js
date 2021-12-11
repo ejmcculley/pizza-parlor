@@ -1,6 +1,7 @@
-function Pizza(toppings, size) {
+function Pizza(toppings, size, price) {
   this.toppings = toppings;
   this.size = size;
+  this.price = price;
 }
 
-let newPizza = new Pizza(["Soppressata", "Mama Lil's Peppers"], "16 inch");
+let myPizza = new Pizza(["Soppressata", "Mama Lil's Peppers"], "16 inch", 22);
