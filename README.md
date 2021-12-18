@@ -22,13 +22,20 @@ _This is the object oriented javascript project for Epicodus. The purpose was to
 
 ## Setup/Installation Requirements
 
+_You have two options for installation. The first, is to clone this repository and open the HTML file in your browser locally. To do this"_
+
+
 1. Click on the green "Code" button above this file list.
 2. Copy the HTTPS link (this is the default option).
 3. Open your local Terminal.
 4. Navigate to the local directory where you want the cloned directory to go.
 5. In your Terminal type "git clone" (without the quotes) then paste the URL you copied above. 
 6. Press 'enter' and the cloned directory should be copied to your current working directory.
-7. To view the HTML file (index.html), double click the file and the it will open in your web browser. 
+7. To view the HTML file (index.html), double click the file and the it will open in your web browser.
+
+_Your second option is to click the Github Pages link below:_
+
+[Check out my Github Pages Link!](https://ejmcculley.github.io/pizza-parlor/)
 
 ## Specs
 

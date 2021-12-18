@@ -1,15 +1,13 @@
-function Pizza(toppings, size, price) {
-  this.toppings = toppings;
+function Pizza(size, toppings, price) {
   this.size = size;
+  this.toppings = toppings;
   this.price = price;
 }
 
-let myPizza = new Pizza(["Soppressata", "Mama Lil's Peppers"], "16 inch", 22);
-
-function pizzaPrice() { 
-  let total = parseInt(pizzaSizeValue) + parseInt(firstToppingValue) + parseInt(secondToppingValue) + parseInt(thirdToppingValue)
-  return total;
+Pizza.prototype.pizzaPrice = function() { 
+  this.price = parseInt(pizzaSizeValue) + parseInt(firstToppingValue) + parseInt(secondToppingValue) + parseInt(thirdToppingValue);
   }
+
 
 $(document).ready(function() {
   $("#enter").click(function() {
@@ -24,6 +22,8 @@ $(document).ready(function() {
     $("#summary").show();
     $("#order").hide();
   })
+  $("#addPizza").submit(function(event) {
+    event.preventDefault();
     let pizzaSize = $("#size option:selected").text();
     let firstTopping = $("#toppingOne option:selected").text();
     let secondTopping = $("#toppingTwo option:selected").text();
@@ -32,5 +32,10 @@ $(document).ready(function() {
     let firstToppingValue = $("#toppingOne").val();
     let secondToppingValue = $("#toppingTwo").val();
     let thirdToppingValue = $("toppingThree").val();
-  });
+
+    let myPizza = new Pizza(pizzaSize, [firstTopping, secondTopping, thirdTopping], price);
+
+    $("myPizzaSummary").text(myPizza);
+  })  
+});
 
