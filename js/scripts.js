@@ -24,18 +24,18 @@ $(document).ready(function() {
   })
   $("#addPizza").submit(function(event) {
     event.preventDefault();
-    let pizzaSize = $("#size option:selected").text();
-    let firstTopping = $("#toppingOne option:selected").text();
-    let secondTopping = $("#toppingTwo option:selected").text();
-    let thirdTopping = $("#toppingThree option:selected").text();
-    let pizzaSizeValue = $("#size").val();
-    let firstToppingValue = $("#toppingOne").val();
-    let secondToppingValue = $("#toppingTwo").val();
-    let thirdToppingValue = $("toppingThree").val();
+    const pizzaSize = $("#size option:selected").text();
+    const firstTopping = $("#toppingOne option:selected").text();
+    const secondTopping = $("#toppingTwo option:selected").text();
+    const thirdTopping = $("#toppingThree option:selected").text();
+    const pizzaSizeValue = $("#size").val();
+    const firstToppingValue = $("#toppingOne").val();
+    const secondToppingValue = $("#toppingTwo").val();
+    const thirdToppingValue = $("toppingThree").val();
 
     let myPizza = new Pizza(pizzaSize, [firstTopping, secondTopping, thirdTopping], price);
 
-    $("myPizzaSummary").text(myPizza);
+    $("span.myPizzaSummary").html(myPizza);
   })  
 });
 
