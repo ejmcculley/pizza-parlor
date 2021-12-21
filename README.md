@@ -66,7 +66,7 @@ _Expected Output: 22_
 
 ## Known Bugs
 
-* Still a WIP, a lot of functionality to troubleshoot
+* Not at the moment!
 
 ## License
 MIT License

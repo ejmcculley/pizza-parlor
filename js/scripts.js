@@ -1,11 +1,12 @@
 function Pizza(size, toppings, price) {
   this.size = size;
   this.toppings = toppings;
-  this.price = price;
+  this.price = 0;
 }
 
-Pizza.prototype.pizzaPrice = function() { 
+Pizza.prototype.pizzaPrice = function(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue) { 
   this.price = parseInt(pizzaSizeValue) + parseInt(firstToppingValue) + parseInt(secondToppingValue) + parseInt(thirdToppingValue);
+  console.log(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue);
   }
 
 
@@ -22,7 +23,7 @@ $(document).ready(function() {
     $("#summary").show();
     $("#order").hide();
   })
-  $("#addPizza").submit(function(event) {
+  $("#addPizza").click(function(event) {
     event.preventDefault();
     const pizzaSize = $("#size option:selected").text();
     const firstTopping = $("#toppingOne option:selected").text();
@@ -31,11 +32,15 @@ $(document).ready(function() {
     const pizzaSizeValue = $("#size").val();
     const firstToppingValue = $("#toppingOne").val();
     const secondToppingValue = $("#toppingTwo").val();
-    const thirdToppingValue = $("toppingThree").val();
+    const thirdToppingValue = $("#toppingThree").val();
 
-    let myPizza = new Pizza(pizzaSize, [firstTopping, secondTopping, thirdTopping], price);
+    let myPizza = new Pizza(pizzaSize, [firstTopping, secondTopping, thirdTopping]);
+    myPizza.pizzaPrice(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue);
+    console.log(myPizza.price);
+    
+    
 
-    $("span.myPizzaSummary").html(myPizza);
+    $("span.myPizzaSummary").html(myPizza.price);
   })  
 });
 
