@@ -6,9 +6,7 @@ function Pizza(size, toppings, price) {
 
 Pizza.prototype.pizzaPrice = function(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue) { 
   this.price = parseInt(pizzaSizeValue) + parseInt(firstToppingValue) + parseInt(secondToppingValue) + parseInt(thirdToppingValue);
-  console.log(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue);
   }
-
 
 $(document).ready(function() {
   $("#enter").click(function() {
@@ -36,10 +34,7 @@ $(document).ready(function() {
 
     let myPizza = new Pizza(pizzaSize, [firstTopping, secondTopping, thirdTopping]);
     myPizza.pizzaPrice(pizzaSizeValue, firstToppingValue, secondToppingValue, thirdToppingValue);
-    console.log(myPizza.price);
     
-    
-
     $("span.myPizzaSummary").html(myPizza.price);
   })  
 });
